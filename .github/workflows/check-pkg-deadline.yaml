@@ -41,7 +41,7 @@ jobs:
               body = "This GHA workflow has been disabled. Please re-enable it when closing this issue."
             )
             gh::gh(
-              "/repos/{owner_repo}/actions/workflows/{workflow_id}/disable",
+              "PUT /repos/{owner_repo}/actions/workflows/{workflow_id}/disable",
               owner_repo = Sys.getenv("GITHUB_REPOSITORY"),
               workflow_id = basename(Sys.getenv("GITHUB_WORKFLOW"))
             )
